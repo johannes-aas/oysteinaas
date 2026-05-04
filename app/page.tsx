@@ -164,7 +164,7 @@ export default function TriathleteHomepage(): ReactElement {
           <div className="grid gap-5 lg:grid-cols-2">
             <ShowcaseCard
               title={t.cards.ironman}
-              image="/assets/IMG_0785.JPG"
+              image="/assets/bike.JPG"
               alt="Øystein Aas racing triathlon"
               tone="orange"
               priority
