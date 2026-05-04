@@ -15,12 +15,13 @@ interface Translations {
     name: string;
   };
   cards: {
-    ironman: string;
+    triathlete: string;
     doctor: string;
   };
   stat: {
     label: string;
     value: string;
+    career: string;
     doctor: string;
     qualifier: string;
     nextRace: string;
@@ -48,13 +49,14 @@ const translations: Record<Language, Translations> = {
       name: "ØYSTEIN AAS",
     },
     cards: {
-      ironman: "IRON MAN",
-      doctor: "PHYSICIAN",
+      triathlete: "TRIATHLETE",
+      doctor: "DOCTOR",
     },
     stat: {
-      label: "Iron man finisher",
-      value: "x3",
-      doctor: "Full time physician",
+      label: "Ironman finisher",
+      value: "x4",
+      career: "Career",
+      doctor: "Full time medical doctor",
       qualifier: "World Championship official qualifier",
       nextRace: "Next race",
       nextRaceCity: "Leeds",
@@ -79,12 +81,13 @@ const translations: Record<Language, Translations> = {
       name: "ØYSTEIN AAS",
     },
     cards: {
-      ironman: "IRON MAN",
+      triathlete: "TRIATLET",
       doctor: "LEGE",
     },
     stat: {
-      label: "Iron man finisher",
-      value: "x3",
+      label: "Ironman finisher",
+      value: "x4",
+      career: "Karriere",
       doctor: "Lege på fulltid",
       qualifier: "Offisiell VM-kvalifisert",
       nextRace: "Neste løp",
@@ -163,7 +166,7 @@ export default function TriathleteHomepage(): ReactElement {
 
           <div className="grid gap-5 lg:grid-cols-2">
             <ShowcaseCard
-              title={t.cards.ironman}
+              title={t.cards.triathlete}
               image="/assets/bike.JPG"
               alt="Øystein Aas racing triathlon"
               tone="orange"
@@ -196,9 +199,9 @@ export default function TriathleteHomepage(): ReactElement {
           <div className="grid gap-5 lg:grid-cols-[1fr_1fr_400px] lg:grid-rows-[180px_40px_180px]">
 
             {/* Full time doctor — row 1, col 1 */}
-            <div className="relative flex flex-col justify-between overflow-hidden border border-white/10 bg-black/30 px-6 py-5 backdrop-blur lg:[grid-area:1/1/2/2]">
+            <div className="hidden lg:flex relative flex-col justify-between overflow-hidden border border-white/10 bg-black/30 px-6 py-5 backdrop-blur lg:[grid-area:1/1/2/2]">
               <div className="text-sm font-black uppercase tracking-[0.24em] text-white/40 leading-tight">
-                Karriere
+                {t.stat.career}
               </div>
               <div className="text-[clamp(1.6rem,4vw,2.4rem)] font-black uppercase leading-tight text-white">
                 {t.stat.doctor}
@@ -206,7 +209,7 @@ export default function TriathleteHomepage(): ReactElement {
             </div>
 
             {/* Iron Man Finisher — rows 1–2, col 2 */}
-            <div className="relative flex flex-col justify-between overflow-hidden border border-white/10 bg-black/30 px-6 py-5 shadow-[0_0_60px_rgba(255,95,0,0.08)] backdrop-blur lg:[grid-area:1/2/3/3]">
+            <div className="relative flex flex-row lg:flex-col justify-between overflow-hidden border border-white/10 bg-black/30 px-6 py-5 shadow-[0_0_60px_rgba(255,95,0,0.08)] backdrop-blur lg:[grid-area:1/2/3/3]">
               <div className="text-xl font-black uppercase tracking-[0.2em] leading-tight">
                 {t.stat.label}
               </div>
@@ -216,7 +219,7 @@ export default function TriathleteHomepage(): ReactElement {
             </div>
 
             {/* World Championship qualifier — rows 2–3, col 1 */}
-            <div className="relative flex flex-col justify-between overflow-hidden border border-white/10 bg-black/30 px-6 py-5 backdrop-blur lg:[grid-area:2/1/4/2]">
+            <div className="relative flex flex-row lg:flex-col justify-between overflow-hidden border border-white/10 bg-black/30 px-6 py-5 backdrop-blur lg:[grid-area:2/1/4/2]">
               <div className="text-xl font-black uppercase tracking-[0.2em] text-white leading-tight">
                 {t.stat.qualifier}
               </div>
@@ -226,7 +229,7 @@ export default function TriathleteHomepage(): ReactElement {
             </div>
 
             {/* Next race — row 3, col 2 */}
-            <div className="relative flex flex-col justify-between overflow-hidden border border-orange-300/35 bg-orange-500 px-6 py-5 shadow-[0_0_50px_rgba(255,95,0,0.18)] lg:[grid-area:3/2/4/3]">
+            <div className="relative flex flex-col gap-4 justify-between overflow-hidden border border-orange-300/35 bg-orange-500 px-6 py-5 shadow-[0_0_50px_rgba(255,95,0,0.18)] lg:[grid-area:3/2/4/3]">
               <div className="text-xl font-black uppercase tracking-[0.24em] text-black leading-tight">
                 {t.stat.nextRace}
               </div>
@@ -247,7 +250,7 @@ export default function TriathleteHomepage(): ReactElement {
                 alt="Finish line"
                 fill
                 sizes="420px"
-                className="absolute inset-0 h-full w-full object-cover object-bottom-left scale-120"
+                className="absolute inset-0 h-full w-full object-cover object-60%-left scale-120"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
@@ -264,7 +267,7 @@ export default function TriathleteHomepage(): ReactElement {
                   href="https://instagram.com/oysteinaas"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ml-auto inline-flex h-12 w-fit items-center justify-center gap-2.5 rounded-full bg-white/10 px-5 text-sm font-black uppercase tracking-[0.18em] text-white shadow-[0_0_34px_rgba(255,95,0,.35)] backdrop-blur-md transition hover:bg-white/20"
+                  className="ml-auto inline-flex h-12 w-fit items-center justify-center gap-2.5 rounded-full bg-white/10 border border-white/10 px-5 text-sm font-black uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-white/20"
                 >
                   <Instagram className="h-4 w-4" />
                   Instagram
@@ -308,7 +311,7 @@ export default function TriathleteHomepage(): ReactElement {
         </div>
       </section>
 
-      <footer className="px-4 pb-8 text-center text-xs font-bold uppercase tracking-[0.24em] text-zinc-600 sm:px-8">
+      <footer className="px-4 pb-8 text-center text-xs font-semibold text-zinc-600 sm:px-8">
         © 2026 Øystein Aas. {t.footer.rights}
       </footer>
     </main>
@@ -344,7 +347,7 @@ function ShowcaseCard({
 
   return (
     <article
-      className={`relative min-h-[520px] overflow-hidden border border-white/10 bg-zinc-950 ${glow}`}
+      className={`relative min-h-[360px] md:min-h-[460px] overflow-hidden border border-white/10 bg-zinc-950 ${glow}`}
     >
       <Image
         src={image}
@@ -360,9 +363,9 @@ function ShowcaseCard({
       <div className="absolute inset-0 opacity-[0.22] [background-image:linear-gradient(90deg,transparent_0,transparent_47%,rgba(255,255,255,.35)_50%,transparent_53%,transparent_100%)] [background-size:9px_100%]" />
       <div className={`absolute left-0 top-0 h-2 w-full ${topBorder}`}/>
 
-      <div className="relative z-10 flex h-full min-h-[520px] items-center justify-center p-5 text-center sm:p-7">
+      <div className="relative z-10 flex h-full min-h-[360px] md:min-h-[460px] items-center justify-center text-center">
         <h2
-          className={`max-w-[10ch] text-[clamp(3.2rem,8.8vw,7rem)] font-black uppercase leading-[0.82] tracking-normal ${titleEffect}`}
+          className={`text-[clamp(3.2rem,10vw,6.5rem)] font-black uppercase leading-[0.82] tracking-normal ${titleEffect}`}
         >
           {title}
         </h2>
