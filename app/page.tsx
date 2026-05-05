@@ -276,10 +276,10 @@ export default function TriathleteHomepage(): ReactElement {
       <section className="relative isolate px-4 py-4 lg:py-8 sm:px-8 lg:px-12">
         <div className={`absolute inset-0 -z-10 transition-all duration-300 ${statsBg}`} />
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-5 lg:grid-cols-[1fr_1fr_400px] lg:grid-rows-[180px_40px_180px]">
+          <div className="grid lg:gap-5 lg:grid-cols-[1fr_1fr_400px] lg:grid-rows-[180px_40px_180px]">
 
             {/* Career */}
-            <div className={`flex gap-2 relative flex-col justify-between overflow-hidden border px-6 py-5 backdrop-blur transition-colors duration-300 lg:[grid-area:1/1/2/2] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-3" : "opacity-0"}`}>
+            <div className={`flex gap-2 relative flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 backdrop-blur transition-colors duration-300 lg:[grid-area:1/1/2/2] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-3" : "opacity-0"}`}>
               <div className={`text-sm font-black uppercase tracking-[0.24em] leading-tight`}>
                 {t.stats.careerLabel}
               </div>
@@ -289,7 +289,7 @@ export default function TriathleteHomepage(): ReactElement {
             </div>
 
             {/* Ironman Finisher */}
-            <div className={`relative flex flex-row lg:flex-col justify-between overflow-hidden border px-6 py-5 shadow-[0_0_60px_rgba(220,38,38,0.08)] backdrop-blur transition-colors duration-300 lg:[grid-area:1/2/3/3] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-4" : "opacity-0"}`}>
+            <div className={`relative flex flex-row lg:flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 shadow-[0_0_60px_rgba(220,38,38,0.08)] backdrop-blur transition-colors duration-300 lg:[grid-area:1/2/3/3] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-4" : "opacity-0"}`}>
               <div className={`max-w-[20ch] lg:max-w-none text-xl font-black uppercase tracking-[0.2em] leading-tight ${cardText}`}>
                 {t.stats.ironmanFinisherLabel}
               </div>
@@ -299,7 +299,7 @@ export default function TriathleteHomepage(): ReactElement {
             </div>
 
             {/* World Championship qualifier */}
-            <div className={`relative flex flex-row lg:flex-col justify-between overflow-hidden border px-6 py-5 backdrop-blur transition-colors duration-300 lg:[grid-area:2/1/4/2] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-5" : "opacity-0"}`}>
+            <div className={`relative flex flex-row lg:flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 backdrop-blur transition-colors duration-300 lg:[grid-area:2/1/4/2] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-5" : "opacity-0"}`}>
               <div className={`max-w-[30ch] lg:max-w- text-xl font-black uppercase tracking-[0.2em] leading-tight ${cardText}`}>
                 {t.stats.qualifierLabel}
               </div>
@@ -328,7 +328,7 @@ export default function TriathleteHomepage(): ReactElement {
             </a>
 
             {/* Follow card */}
-            <div className={`relative min-h-[440px] overflow-hidden ${isDark && "border border-white/10"} bg-zinc-950 shadow-[0_0_90px_rgba(220,38,38,0.16)] lg:[grid-area:1/3/4/4] ${mounted ? "anim-scale-up anim-delay-4" : "opacity-0"}`}>
+            <div className={`relative min-h-[440px] overflow-hidden mt-6 lg:mt-0 ${isDark && "border border-white/10"} bg-zinc-950 shadow-[0_0_90px_rgba(220,38,38,0.16)] lg:[grid-area:1/3/4/4] ${mounted ? "anim-scale-up anim-delay-4" : "opacity-0"}`}>
               <Image
                 src="/assets/finish-line.JPG"
                 alt="Finish line"
@@ -339,7 +339,6 @@ export default function TriathleteHomepage(): ReactElement {
               <div className="absolute inset-0 bg-gradient-to-t from-red-900/60 via-red-900/20 to-transparent" />
 <div className="absolute inset-0 bg-gradient-to-r from-red-800/25 via-transparent to-transparent" />
 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_85%,rgba(255,0,0,0.3),transparent_60%)] mix-blend-screen" />
-              <div className="absolute inset-x-0 top-0 h-2 bg-red-600 shadow-[0_0_28px_rgba(200,0,0,.9)]" />
 
               <div className="relative z-10 flex h-full flex-col justify-end gap-4 p-6 text-right">
                 <div className="text-[clamp(3rem,8vw,4.5rem)] lg:text-[clamp(2.4rem,4.5vw,4rem)] font-black uppercase leading-[0.85] text-white/80 drop-shadow-[0_0_34px_rgba(220,38,38,.5)]">
@@ -349,7 +348,7 @@ export default function TriathleteHomepage(): ReactElement {
                   href="https://instagram.com/oysteinaas"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ml-auto inline-flex h-12 w-fit items-center justify-center gap-2.5 rounded-full bg-white/20 border border-white/30 px-5 text-sm font-black uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-white/15"
+                  className="ml-auto inline-flex h-12 w-fit items-center justify-center gap-2.5 rounded-full bg-blue-500/50 border border-white/30 px-5 text-sm font-black uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-white/15"
                 >
                   <Instagram className="h-4 w-4" />
                   Instagram
