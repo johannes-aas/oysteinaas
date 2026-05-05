@@ -222,7 +222,7 @@ export default function TriathleteHomepage(): ReactElement {
           {/* Language toggle */}
           <button
             onClick={toggleLanguage}
-            className="cursor-pointer flex h-10 items-center gap-2 rounded-full bg-red-600 px-4 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:bg-red-400"
+            className="cursor-pointer flex h-10 items-center gap-2 rounded-full bg-red-600 px-4 text-sm font-bold uppercase tracking-[0.18em] text-white transition hover:bg-red-400"
             aria-label="Toggle language"
           >
             <Globe className="h-4 w-4" />
@@ -241,7 +241,7 @@ export default function TriathleteHomepage(): ReactElement {
         <div className="relative z-10 mx-auto max-w-7xl">
           <div className="mb-10">
             <div className="max-w-4xl">
-              <h1 className={`relative text-[clamp(4.4rem,15vw,9rem)] font-black uppercase leading-[0.8] tracking-normal drop-shadow-[0_0_34px_rgba(255,255,255,0.10)] after:absolute after:-bottom-4 after:left-1 after:h-1 after:w-36 after:bg-red-600 after:shadow-[0_0_24px_rgba(200,0,0,0.8)] ${mounted ? "anim-fade-up anim-delay-1" : "opacity-0"}`}>
+              <h1 className={`relative text-[clamp(4.4rem,15vw,9rem)] font-bold uppercase leading-[0.8] tracking-normal drop-shadow-[0_0_34px_rgba(255,255,255,0.10)] after:absolute after:-bottom-4 after:left-1 after:h-1 after:w-36 after:bg-red-600 after:shadow-[0_0_24px_rgba(200,0,0,0.8)] ${mounted ? "anim-fade-up anim-delay-1" : "opacity-0"}`}>
                 {HERO_NAME}
               </h1>
             </div>
@@ -256,6 +256,7 @@ export default function TriathleteHomepage(): ReactElement {
               tone="red"
               isDark={isDark}
               priority
+              objectPosition="center 20%"
             />
             </div>
             <div className={mounted ? "anim-scale-up anim-delay-3" : "opacity-0"}>
@@ -265,7 +266,7 @@ export default function TriathleteHomepage(): ReactElement {
               alt="Øystein Aas as a doctor"
               tone="sky"
               isDark={isDark}
-              objectPosition="center 15%"
+              objectPosition="center 10%"
             />
             </div>
           </div>
@@ -280,30 +281,30 @@ export default function TriathleteHomepage(): ReactElement {
 
             {/* Career */}
             <div className={`flex gap-2 relative flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 backdrop-blur transition-colors duration-300 lg:[grid-area:1/1/2/2] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-3" : "opacity-0"}`}>
-              <div className={`text-sm font-black uppercase tracking-[0.24em] leading-tight`}>
+              <div className={`text-sm font-bold uppercase tracking-[0.24em] leading-tight`}>
                 {t.stats.careerLabel}
               </div>
-              <div className={`text-[clamp(1.6rem,4vw,2.4rem)] font-black uppercase leading-tight ${cardText}`}>
+              <div className={`text-[clamp(1.6rem,4vw,2.4rem)] font-bold uppercase leading-tight ${cardText}`}>
                 {t.stats.careerValue}
               </div>
             </div>
 
             {/* Ironman Finisher */}
             <div className={`relative flex flex-row lg:flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 shadow-[0_0_60px_rgba(220,38,38,0.08)] backdrop-blur transition-colors duration-300 lg:[grid-area:1/2/3/3] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-4" : "opacity-0"}`}>
-              <div className={`max-w-[20ch] lg:max-w-none text-xl font-black uppercase tracking-[0.2em] leading-tight ${cardText}`}>
+              <div className={`max-w-[20ch] lg:max-w-none text-xl font-bold uppercase tracking-[0.2em] leading-tight ${cardText}`}>
                 {t.stats.ironmanFinisherLabel}
               </div>
-              <div className="self-end text-[clamp(4rem,10vw,6.5rem)] font-black leading-none text-red-600 drop-shadow-[0_0_35px_rgba(220,38,38,0.55)]">
+              <div className="self-end text-[clamp(4rem,10vw,6.5rem)] font-bold leading-none text-red-600 drop-shadow-[0_0_35px_rgba(220,38,38,0.55)] tabular-nums">
                 {t.stats.ironmanFinisherCount}
               </div>
             </div>
 
             {/* World Championship qualifier */}
             <div className={`relative flex flex-row lg:flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 backdrop-blur transition-colors duration-300 lg:[grid-area:2/1/4/2] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-5" : "opacity-0"}`}>
-              <div className={`max-w-[30ch] lg:max-w- text-xl font-black uppercase tracking-[0.2em] leading-tight ${cardText}`}>
+              <div className={`max-w-[30ch] lg:max-w- text-xl font-bold uppercase tracking-[0.2em] leading-tight ${cardText}`}>
                 {t.stats.qualifierLabel}
               </div>
-              <div className={`self-end text-[clamp(4rem,10vw,6.5rem)] font-black leading-none ${isDark ? "text-white/30" : "text-black/60"}`}>
+              <div className={`self-end text-[clamp(4rem,10vw,6.5rem)] font-bold leading-none ${isDark ? "text-white/30" : "text-black/60"}`}>
                 {t.stats.qualifierCount}
               </div>
             </div>
@@ -316,7 +317,7 @@ export default function TriathleteHomepage(): ReactElement {
               className={`group relative flex flex-col gap-4 justify-between overflow-hidden border border-red-400/35 bg-red-700 pl-6 py-5 pr-5 shadow-[0_0_50px_rgba(220,38,38,0.22)] transition hover:bg-red-600 lg:[grid-area:3/2/4/3] ${mounted ? "anim-fade-up anim-delay-6" : "opacity-0"}`}
             >
               <div className="flex items-start justify-between">
-                <div className="text-xl font-black uppercase tracking-[0.24em] text-white leading-tight">
+                <div className="text-xl font-bold uppercase tracking-[0.24em] text-white leading-tight">
                   {t.stats.nextRaceLabel}
                 </div>
                 <ArrowUpRight className="size-10 text-white transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
@@ -328,7 +329,7 @@ export default function TriathleteHomepage(): ReactElement {
             </a>
 
             {/* Follow card */}
-            <div className={`relative min-h-[440px] overflow-hidden mt-6 lg:mt-0 ${isDark && "border border-white/10"} bg-zinc-950 shadow-[0_0_90px_rgba(220,38,38,0.16)] lg:[grid-area:1/3/4/4] ${mounted ? "anim-scale-up anim-delay-4" : "opacity-0"}`}>
+            <div className={`relative min-h-[440px] overflow-hidden mt-7 lg:mt-0 ${isDark && "border border-white/10"} bg-zinc-950 shadow-[0_0_90px_rgba(220,38,38,0.16)] lg:[grid-area:1/3/4/4] ${mounted ? "anim-scale-up anim-delay-4" : "opacity-0"}`}>
               <Image
                 src="/assets/finish-line.JPG"
                 alt="Finish line"
@@ -341,14 +342,14 @@ export default function TriathleteHomepage(): ReactElement {
 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_85%,rgba(255,0,0,0.3),transparent_60%)] mix-blend-screen" />
 
               <div className="relative z-10 flex h-full flex-col justify-end gap-4 p-6 text-right">
-                <div className="text-[clamp(3rem,8vw,4.5rem)] lg:text-[clamp(2.4rem,4.5vw,4rem)] font-black uppercase leading-[0.85] text-white/80 drop-shadow-[0_0_34px_rgba(220,38,38,.5)]">
+                <div className="text-[clamp(3.8rem,9vw,5rem)] lg:text-[clamp(2.4rem,4.5vw,4rem)] font-bold uppercase leading-[0.85] text-white/80 drop-shadow-[0_0_34px_rgba(220,38,38,.5)]">
                   {t.stats.followHeading}
                 </div>
                 <a
                   href="https://instagram.com/oysteinaas"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ml-auto inline-flex h-12 w-fit items-center justify-center gap-2.5 rounded-full bg-blue-500/50 border border-white/30 px-5 text-sm font-black uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-white/15"
+                  className="ml-auto inline-flex h-12 w-fit items-center justify-center gap-2.5 rounded-full bg-sky-500/50 border border-white/30 px-5 text-sm font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-sky-500/30"
                 >
                   <Instagram className="h-4 w-4" />
                   Instagram
@@ -364,7 +365,7 @@ export default function TriathleteHomepage(): ReactElement {
       <section id="contact" className={`px-4 py-20 sm:px-8 lg:px-12 ${mounted ? "anim-fade-in anim-delay-7" : "opacity-0"}`}>
         <div className={`mx-auto grid max-w-7xl items-end gap-8 border-t pt-12 lg:grid-cols-[1fr_auto] transition-colors duration-300 ${contactBorder}`}>
           <div>
-            <h2 className={`text-4xl font-black uppercase leading-none sm:text-6xl ${contactTitle}`}>
+            <h2 className={`text-4xl font-bold uppercase leading-none sm:text-6xl ${contactTitle}`}>
               {t.contact.title}
             </h2>
             <p className={`mt-5 max-w-2xl text-lg font-medium ${contactSub}`}>
@@ -375,7 +376,7 @@ export default function TriathleteHomepage(): ReactElement {
           <div className="flex flex-wrap gap-3">
             <a
               href="mailto:oystein.aas95@gmail.com"
-              className="inline-flex h-12 items-center gap-2 rounded-full bg-red-600 px-5 text-sm font-black uppercase tracking-[0.16em] text-white transition hover:bg-red-400"
+              className="inline-flex h-12 items-center gap-2 rounded-full bg-red-600 px-5 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-red-400"
             >
               <Mail className="h-4 w-4" />
               {t.contact.emailButton}
@@ -384,7 +385,7 @@ export default function TriathleteHomepage(): ReactElement {
               href="https://instagram.com/oysteinaas"
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex h-12 items-center gap-2 rounded-full px-5 text-sm font-black uppercase tracking-[0.16em] transition ${isDark ? "bg-white/10 text-white hover:bg-white/20" : "bg-black/10 text-black hover:bg-black/20"}`}
+              className={`inline-flex h-12 items-center gap-2 rounded-full px-5 text-sm font-bold uppercase tracking-[0.16em] transition ${isDark ? "bg-white/10 text-white hover:bg-white/20" : "bg-black/10 text-black hover:bg-black/20"}`}
             >
               <Instagram className="h-4 w-4" />
               {t.contact.instagramButton}
@@ -434,7 +435,7 @@ function ShowcaseCard({
 
   return (
     <article
-      className={`relative min-h-[360px] md:min-h-[460px] overflow-hidden border bg-zinc-950 ${border} ${glow}`}
+      className={`relative min-h-[300px] md:min-h-[460px] overflow-hidden border bg-zinc-950 ${border} ${glow}`}
     >
       <Image
         src={image}
@@ -452,7 +453,7 @@ function ShowcaseCard({
 
       <div className="absolute inset-x-0 bottom-[20%] z-10 flex justify-center text-center px-4">
         <h2
-          className={`text-[clamp(3.2rem,15vw,6.5rem)] lg:text-[clamp(3.2rem,8vw,5.8rem)] xl:text-[clamp(3.2rem,10vw,6.2rem)] font-black uppercase leading-[0.82] tracking-normal ${titleEffect}`}
+          className={`text-[clamp(3.2rem,15vw,6.5rem)] lg:text-[clamp(3.2rem,8vw,5.8rem)] xl:text-[clamp(3.2rem,10vw,6.2rem)] font-bold uppercase leading-[0.82] tracking-normal ${titleEffect}`}
         >
           {title}
         </h2>
