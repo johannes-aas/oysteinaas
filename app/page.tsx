@@ -133,9 +133,8 @@ export default function TriathleteHomepage(): ReactElement {
     : "bg-[linear-gradient(180deg,#f5f2f0_0%,#fde8e6_44%,#f5f2f0_100%)]";
 
   // card border / glass
-  const cardBorder = isDark ? "border-white/10 bg-black/30" : "border-black/10 bg-white/60";
+  const cardBorder = isDark ? "border-white/15 bg-black/30" : "border-black/10 bg-white/60";
   const cardText = isDark ? "text-white" : "text-[#100a08]";
-  const cardMuted = isDark ? "text-white/40" : "text-black/40";
 
   // nav pill
   const navPill = isDark
@@ -304,7 +303,7 @@ export default function TriathleteHomepage(): ReactElement {
               <div className={`max-w-[30ch] lg:max-w- text-xl font-bold uppercase tracking-[0.2em] leading-tight ${cardText}`}>
                 {t.stats.qualifierLabel}
               </div>
-              <div className={`self-end text-[clamp(4rem,10vw,6.5rem)] font-bold leading-none ${isDark ? "text-white/30" : "text-black/60"}`}>
+              <div className={`self-end text-[clamp(4rem,10vw,6.5rem)] font-bold leading-none tabular-nums ${isDark ? "text-white/30" : "text-black/60"}`}>
                 {t.stats.qualifierCount}
               </div>
             </div>
