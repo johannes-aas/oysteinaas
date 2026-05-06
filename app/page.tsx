@@ -58,7 +58,7 @@ const translations: Record<Language, Translations> = {
       followHeading: "Follow the journey",
     },
     contact: {
-      title: "Be a part of team Aas?",
+      title: "Want to work togheter?",
       subtitle: "Join the team, reach out.",
       emailButton: "Send Email",
       instagramButton: "Instagram",
@@ -81,7 +81,7 @@ const translations: Record<Language, Translations> = {
       followHeading: "Følg reisen",
     },
     contact: {
-      title: "Bli en del av team Aas?",
+      title: "Interessert i samarbeid?",
       subtitle: "Ta kontakt for å bli med på laget.",
       emailButton: "Send E-post",
       instagramButton: "Instagram",
@@ -133,7 +133,7 @@ export default function TriathleteHomepage(): ReactElement {
     : "bg-[linear-gradient(180deg,#f5f2f0_0%,#fde8e6_44%,#f5f2f0_100%)]";
 
   // card border / glass
-  const cardBorder = isDark ? "border-white/15 bg-black/30" : "border-black/10 bg-white/60";
+  const cardBorder = isDark ? "border-white/20 bg-black/25" : "border-black/10 bg-white/60";
   const cardText = isDark ? "text-white" : "text-[#100a08]";
 
   // nav pill
@@ -189,45 +189,45 @@ export default function TriathleteHomepage(): ReactElement {
       {/* ── Nav ─────────────────────────────────────────────────────────────── */}
       <nav className={`fixed left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 transition-all duration-300 ${scrolled ? "top-3" : "top-4 sm:top-6 lg:top-20"}`}>
         <div className="mx-auto flex max-w-7xl justify-end">
-        <div className={`flex items-center gap-2 rounded-full border p-1.5 backdrop-blur-xl transition-colors duration-300 ${navPill} ${mounted ? "anim-fade-down" : "opacity-0"}`}>
-          <a
-            href="https://instagram.com/oysteinaas"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`grid h-10 w-10 place-items-center rounded-full transition ${navIcon}`}
-            aria-label="Instagram"
-          >
-            <Instagram className="h-4 w-4" />
-          </a>
+          <div className={`flex items-center gap-2 sm:gap-1 rounded-full border p-1.5 pl-6 md:pl-3 backdrop-blur-xl transition-colors duration-300 ${navPill} ${mounted ? "anim-fade-down" : "opacity-0"}`}>
+            <a
+              href="https://instagram.com/oysteinaas"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`grid h-10 w-10 place-items-center rounded-full transition ${navIcon}`}
+              aria-label="Instagram"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
 
-          <a
-            href="mailto:oystein.aas95@gmail.com"
-            className={`grid h-10 w-10 place-items-center rounded-full transition ${navIcon}`}
-            aria-label="Email"
-          >
-            <Mail className="h-4 w-4" />
-          </a>
+            <a
+              href="mailto:oystein.aas95@gmail.com"
+              className={`grid h-10 w-10 place-items-center rounded-full transition ${navIcon}`}
+              aria-label="Email"
+            >
+              <Mail className="h-4 w-4" />
+            </a>
 
-          {/* Theme toggle */}
-          <button
-            onClick={toggleTheme}
-            className={`grid h-10 w-10 place-items-center rounded-full transition cursor-pointer ${themeBtn}`}
-            aria-label="Toggle theme"
-            title="Toggle theme"
-          >
-            {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-          </button>
+            {/* Theme toggle */}
+            <button
+              onClick={toggleTheme}
+              className={`grid h-10 w-10 place-items-center rounded-full transition cursor-pointer ${themeBtn}`}
+              aria-label="Toggle theme"
+              title="Toggle theme"
+            >
+              {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </button>
 
-          {/* Language toggle */}
-          <button
-            onClick={toggleLanguage}
-            className="cursor-pointer flex h-10 items-center gap-2 rounded-full bg-red-600 px-4 text-sm font-bold uppercase tracking-[0.18em] text-white transition hover:bg-red-400"
-            aria-label="Toggle language"
-          >
-            <Globe className="h-4 w-4" />
-            {t.nav.switchTo}
-          </button>
-        </div>
+            {/* Language toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="cursor-pointer flex h-10 items-center gap-2 rounded-full bg-red-600 px-4 ml-1 text-sm font-bold uppercase tracking-[0.18em] text-white transition hover:bg-red-400"
+              aria-label="Toggle language"
+            >
+              <Globe className="h-4 w-4" />
+              {t.nav.switchTo}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -275,87 +275,87 @@ export default function TriathleteHomepage(): ReactElement {
       {/* ── Stats ───────────────────────────────────────────────────────────── */}
       <section className="relative isolate px-4 py-4 lg:py-8 sm:px-8 lg:px-12">
         <div className={`absolute inset-0 -z-10 transition-all duration-300 ${statsBg}`} />
-        <div className="mx-auto max-w-7xl">
-          <div className="grid lg:gap-5 lg:grid-cols-[1fr_1fr_400px] lg:grid-rows-[180px_40px_180px]">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid lg:gap-5 lg:grid-cols-[1fr_1fr_400px] lg:grid-rows-[180px_40px_180px]">
 
-            {/* Career */}
-            <div className={`flex gap-2 relative flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 backdrop-blur transition-colors duration-300 lg:[grid-area:1/1/2/2] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-3" : "opacity-0"}`}>
-              <div className={`text-sm font-bold uppercase tracking-[0.24em] leading-tight`}>
-                {t.stats.careerLabel}
-              </div>
-              <div className={`text-[clamp(1.6rem,4vw,2.4rem)] font-bold uppercase leading-tight ${cardText}`}>
-                {t.stats.careerValue}
-              </div>
-            </div>
-
-            {/* Ironman Finisher */}
-            <div className={`relative flex flex-row lg:flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 shadow-[0_0_60px_rgba(220,38,38,0.08)] backdrop-blur transition-colors duration-300 lg:[grid-area:1/2/3/3] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-4" : "opacity-0"}`}>
-              <div className={`max-w-[20ch] lg:max-w-none text-xl font-bold uppercase tracking-[0.2em] leading-tight ${cardText}`}>
-                {t.stats.ironmanFinisherLabel}
-              </div>
-              <div className="self-end text-[clamp(4rem,10vw,6.5rem)] font-bold leading-none text-red-600 drop-shadow-[0_0_35px_rgba(220,38,38,0.55)] tabular-nums">
-                {t.stats.ironmanFinisherCount}
-              </div>
-            </div>
-
-            {/* World Championship qualifier */}
-            <div className={`relative flex flex-row lg:flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 backdrop-blur transition-colors duration-300 lg:[grid-area:2/1/4/2] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-5" : "opacity-0"}`}>
-              <div className={`max-w-[30ch] lg:max-w- text-xl font-bold uppercase tracking-[0.2em] leading-tight ${cardText}`}>
-                {t.stats.qualifierLabel}
-              </div>
-              <div className={`self-end text-[clamp(4rem,10vw,6.5rem)] font-bold leading-none tabular-nums ${isDark ? "text-white/30" : "text-black/60"}`}>
-                {t.stats.qualifierCount}
-              </div>
-            </div>
-
-            {/* Next race */}
-            <a
-              href="https://www.ironman.com/races/im-leeds"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group relative flex flex-col gap-4 justify-between overflow-hidden border border-red-400/35 bg-red-700 pl-6 py-5 pr-5 shadow-[0_0_50px_rgba(220,38,38,0.22)] transition hover:bg-red-600 lg:[grid-area:3/2/4/3] ${mounted ? "anim-fade-up anim-delay-6" : "opacity-0"}`}
-            >
-              <div className="flex items-start justify-between">
-                <div className="text-xl font-bold uppercase tracking-[0.24em] text-white leading-tight">
-                  {t.stats.nextRaceLabel}
+              {/* Career */}
+              <div className={`flex gap-2 relative flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 backdrop-blur transition-colors duration-300 lg:[grid-area:1/1/2/2] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-3" : "opacity-0"}`}>
+                <div className={`text-sm font-bold uppercase tracking-[0.24em] leading-tight`}>
+                  {t.stats.careerLabel}
                 </div>
-                <ArrowUpRight className="size-10 text-white transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
-              </div>
-              <div className="font-bold uppercase leading-none text-white">
-                <div className="text-xl">{t.stats.nextRaceDate}</div>
-                <div className="text-5xl lg:text-4xl xl:text-6xl">{t.stats.nextRaceName}</div>
-              </div>
-            </a>
-
-            {/* Follow card */}
-            <div className={`relative min-h-[440px] overflow-hidden mt-7 lg:mt-0 ${isDark && "border border-white/10"} bg-zinc-950 shadow-[0_0_90px_rgba(220,38,38,0.16)] lg:[grid-area:1/3/4/4] ${mounted ? "anim-scale-up anim-delay-4" : "opacity-0"}`}>
-              <Image
-                src="/assets/finish-line.JPG"
-                alt="Finish line"
-                fill
-                sizes="420px"
-                className="absolute inset-0 h-full w-full object-cover object-60%-left scale-120"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-red-900/60 via-red-900/20 to-transparent" />
-<div className="absolute inset-0 bg-gradient-to-r from-red-800/25 via-transparent to-transparent" />
-<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_85%,rgba(255,0,0,0.3),transparent_60%)] mix-blend-screen" />
-
-              <div className="relative z-10 flex h-full flex-col justify-end gap-4 p-6 text-right">
-                <div className="text-[clamp(3.8rem,9vw,5rem)] lg:text-[clamp(2.4rem,4.5vw,4rem)] font-bold uppercase leading-[0.85] text-white/80 drop-shadow-[0_0_34px_rgba(220,38,38,.5)]">
-                  {t.stats.followHeading}
+                <div className={`text-[clamp(1.6rem,4vw,2.4rem)] font-bold uppercase leading-tight ${cardText}`}>
+                  {t.stats.careerValue}
                 </div>
-                <a
-                  href="https://instagram.com/oysteinaas"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ml-auto inline-flex h-12 w-fit items-center justify-center gap-2.5 rounded-full bg-sky-500/50 border border-white/30 px-5 text-sm font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-sky-500/30"
-                >
-                  <Instagram className="h-4 w-4" />
-                  Instagram
-                </a>
+              </div>
+
+              {/* World Championship qualifier */}
+              <div className={`relative flex flex-row lg:flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 backdrop-blur transition-colors duration-300 lg:[grid-area:1/2/3/3] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-5" : "opacity-0"}`}>
+                <div className={`max-w-[30ch] lg:max-w- text-xl font-bold uppercase tracking-[0.2em] leading-tight ${cardText}`}>
+                  {t.stats.qualifierLabel}
+                </div>
+                <div className="self-end text-[clamp(4rem,10vw,6.5rem)] font-bold leading-none tabular-nums text-red-600">
+                  {t.stats.qualifierCount}
+                </div>
+              </div>
+
+              {/* Ironman Finisher */}
+              <div className={`relative flex flex-row lg:flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 shadow-[0_0_60px_rgba(220,38,38,0.08)] backdrop-blur transition-colors duration-300 lg:[grid-area:2/1/4/2] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-4" : "opacity-0"}`}>
+                <div className={`max-w-[20ch] lg:max-w-none text-xl font-bold uppercase tracking-[0.2em] leading-tight ${cardText}`}>
+                  {t.stats.ironmanFinisherLabel}
+                </div>
+                <div className={`self-end text-[clamp(4rem,10vw,6.5rem)] font-bold leading-none tabular-nums ${isDark ? "text-white/30" : "text-black/60"}`}>
+                  {t.stats.ironmanFinisherCount}
+                </div>
+              </div>
+
+              {/* Next race */}
+              <a
+                href="https://www.ironman.com/races/im-leeds"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group relative flex flex-col gap-4 justify-between overflow-hidden border border-red-400/35 bg-red-700 pl-6 py-5 pr-5 shadow-[0_0_50px_rgba(220,38,38,0.22)] transition hover:bg-red-600 lg:[grid-area:3/2/4/3] ${mounted ? "anim-fade-up anim-delay-6" : "opacity-0"}`}
+              >
+                <div className="flex items-start justify-between">
+                  <div className="text-xl font-bold uppercase tracking-[0.24em] text-white leading-tight">
+                    {t.stats.nextRaceLabel}
+                  </div>
+                  <ArrowUpRight className="size-10 text-white transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
+                </div>
+                <div className="font-bold uppercase leading-none text-white">
+                  <div className="text-xl">{t.stats.nextRaceDate}</div>
+                  <div className="text-5xl lg:text-4xl xl:text-6xl">{t.stats.nextRaceName}</div>
+                </div>
+              </a>
+
+              {/* Follow card */}
+              <div className={`relative min-h-[360px] overflow-hidden mt-8 lg:mt-0 bg-zinc-950 shadow-[0_0_90px_rgba(220,38,38,0.16)] lg:[grid-area:1/3/4/4] ${mounted ? "anim-scale-up anim-delay-4" : "opacity-0"}`}>
+                <Image
+                  src="/assets/finish-line.JPG"
+                  alt="Finish line"
+                  fill
+                  sizes="420px"
+                  className="absolute inset-0 h-full w-full object-cover object-[center_10%] scale-120"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-red-900/60 via-red-900/20 to-transparent">
+                <div className="absolute inset-0 bg-gradient-to-r from-red-800/25 via-transparent to-transparent"/>
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_85%,rgba(255,0,0,0.3),transparent_60%)] mix-blend-screen"/>
+
+                <div className="relative z-10 flex h-full flex-col justify-end gap-4 p-6 text-right">
+                  <div className="text-[clamp(3.8rem,9vw,5rem)] lg:text-[clamp(2.4rem,4.5vw,4rem)] font-bold uppercase leading-[0.85] text-white/70 drop-shadow-[0_0_34px_rgba(220,38,38,.5)]">
+                    {t.stats.followHeading}
+                  </div>
+                  <a
+                    href="https://instagram.com/oysteinaas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-auto inline-flex h-12 w-fit items-center justify-center gap-2.5 rounded-full bg-sky-500/50 border border-white/30 px-5 text-sm font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-sky-500/30"
+                  >
+                    <Instagram className="h-4 w-4" />
+                    Instagram
+                  </a>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -430,11 +430,9 @@ function ShowcaseCard({
 
   const topBorder = tone === "red" ? "bg-red-600" : "bg-sky-700";
 
-  const border = isDark ? "border-white/10" : "border-white/70"
-
   return (
     <article
-      className={`relative min-h-[300px] md:min-h-[460px] overflow-hidden border bg-zinc-950 ${border} ${glow}`}
+      className={`relative min-h-[300px] md:min-h-[460px] overflow-hidden bg-zinc-950 ${glow}`}
     >
       <Image
         src={image}
