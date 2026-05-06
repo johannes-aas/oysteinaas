@@ -140,7 +140,7 @@ export default function TriathleteHomepage(): ReactElement {
   const navPill = isDark
     ? "border-white/15 bg-black/45 shadow-[0_0_34px_rgba(220,38,38,0.18)]"
     : "border-black/10 bg-white/70 shadow-[0_0_34px_rgba(220,38,38,0.14)]";
-  const navIcon = isDark ? "text-white/80 hover:bg-white/10 hover:text-red-200" : "text-black/70 hover:bg-black/10 hover:text-red-600";
+  const navIcon = isDark ? "text-white/80 hover:bg-white/10 hover:text-red-500" : "text-black/70 hover:bg-black/10 hover:text-red-500";
 
   // contact section
   const contactBorder = isDark ? "border-white/10" : "border-black/10";
@@ -188,7 +188,7 @@ export default function TriathleteHomepage(): ReactElement {
       `}</style>
       {/* ── Nav ─────────────────────────────────────────────────────────────── */}
       <nav className={`fixed left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 transition-all duration-300 ${scrolled ? "top-3" : "top-4 sm:top-6 lg:top-20"}`}>
-        <div className="mx-auto flex max-w-7xl justify-end">
+        <div className="mx-auto flex max-w-7xl justify-around sm:justify-end">
           <div className={`flex items-center gap-2 sm:gap-1 rounded-full border p-1.5 pl-6 md:pl-3 backdrop-blur-xl transition-colors duration-300 ${navPill} ${mounted ? "anim-fade-down" : "opacity-0"}`}>
             <a
               href="https://instagram.com/oysteinaas"
@@ -319,7 +319,7 @@ export default function TriathleteHomepage(): ReactElement {
                   <div className="text-xl font-bold uppercase tracking-[0.24em] text-white leading-tight">
                     {t.stats.nextRaceLabel}
                   </div>
-                  <ArrowUpRight className="size-10 text-white transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
+                  <ArrowUpRight className="size-10 text-white -mr-1 -mt-1 transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white" />
                 </div>
                 <div className="font-bold uppercase leading-none text-white">
                   <div className="text-xl">{t.stats.nextRaceDate}</div>
