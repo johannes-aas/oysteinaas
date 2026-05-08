@@ -58,7 +58,7 @@ const translations: Record<Language, Translations> = {
       followHeading: "Follow the journey",
     },
     contact: {
-      title: "Want to work togheter?",
+      title: "Want to collaborate?",
       subtitle: "Join the team, reach out.",
       emailButton: "Send Email",
       instagramButton: "Instagram",
