@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Outfit } from "next/font/google";
+import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 
 const outfit = Outfit({
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Øystein Aas",
   description:
-  "Website of Øystein Aas, medical doctor and triathlete from Norway.",
+  "Website of Øystein Aas, triathlete and medical doctor from Norway.",
   manifest: "/manifest.json",
 };
 
