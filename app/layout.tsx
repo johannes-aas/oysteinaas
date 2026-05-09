@@ -31,6 +31,7 @@ export default function RootLayout({
         className={`${outfit.className} ${outfit.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
