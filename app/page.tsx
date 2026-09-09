@@ -47,14 +47,14 @@ const translations: Record<Language, Translations> = {
     cards: { triathlete: "TRIATHLETE", doctor: "DOCTOR" },
     stats: {
       ironmanFinisherLabel: "Ironman finisher",
-      ironmanFinisherCount: "x4",
+      ironmanFinisherCount: "x5",
       careerLabel: "Career",
       careerValue: "Full time medical doctor",
       qualifierLabel: "World Championship official qualifier",
-      qualifierCount: "x1",
+      qualifierCount: "x2",
       nextRaceLabel: "Next race",
-      nextRaceName: "IM Leeds",
-      nextRaceDate: "16. August",
+      nextRaceName: "IM World Championship Kona, Hawaii",
+      nextRaceDate: "10. October",
       followHeading: "Follow the journey",
     },
     contact: {
@@ -70,14 +70,14 @@ const translations: Record<Language, Translations> = {
     cards: { triathlete: "TRIATLET", doctor: "LEGE" },
     stats: {
       ironmanFinisherLabel: "Ironman finisher",
-      ironmanFinisherCount: "x4",
+      ironmanFinisherCount: "x5",
       careerLabel: "Karriere",
       careerValue: "Lege på fulltid",
       qualifierLabel: "Offisielt VM-kvalifisert",
-      qualifierCount: "x1",
+      qualifierCount: "x2",
       nextRaceLabel: "Neste løp",
-      nextRaceName: "IM Leeds",
-      nextRaceDate: "16. august",
+      nextRaceName: "IM World Championship Kona, Hawaii",
+      nextRaceDate: "10. oktober",
       followHeading: "Følg reisen",
     },
     contact: {
@@ -276,7 +276,7 @@ export default function TriathleteHomepage(): ReactElement {
       <section className="relative isolate px-4 py-4 lg:py-8 sm:px-8 lg:px-12">
         <div className={`absolute inset-0 -z-10 transition-all duration-300 ${statsBg}`} />
           <div className="mx-auto max-w-7xl">
-            <div className="grid lg:gap-5 lg:grid-cols-[1fr_1fr_400px] lg:grid-rows-[180px_40px_180px]">
+            <div className="grid lg:gap-5 lg:grid-cols-[1fr_1fr_clamp(220px,calc(100vw-976px),400px)] lg:grid-rows-[180px_40px_minmax(180px,auto)]">
 
               {/* Career */}
               <div className={`flex gap-2 relative flex-col justify-between overflow-hidden border px-6 py-7 lg:py-5 backdrop-blur transition-colors duration-300 lg:[grid-area:1/1/2/2] ${cardBorder} ${mounted ? "anim-fade-up anim-delay-3" : "opacity-0"}`}>
@@ -310,7 +310,7 @@ export default function TriathleteHomepage(): ReactElement {
 
               {/* Next race */}
               <a
-                href="https://www.ironman.com/races/im-leeds"
+                href="https://www.ironman.com/im-world-championship-kona"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`group relative flex flex-col gap-4 justify-between overflow-hidden border border-red-400/35 bg-red-700 pl-6 py-5 pr-5 shadow-[0_0_50px_rgba(220,38,38,0.22)] transition hover:bg-red-600 lg:[grid-area:3/2/4/3] ${mounted ? "anim-fade-up anim-delay-6" : "opacity-0"}`}
@@ -321,9 +321,9 @@ export default function TriathleteHomepage(): ReactElement {
                   </div>
                   <ArrowUpRight className="size-10 text-white -mr-1 -mt-1 transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white" />
                 </div>
-                <div className="font-bold uppercase leading-none text-white">
-                  <div className="text-xl">{t.stats.nextRaceDate}</div>
-                  <div className="text-5xl lg:text-4xl xl:text-6xl">{t.stats.nextRaceName}</div>
+                <div className="font-bold uppercase text-white">
+                  <div className="text-xl leading-none">{t.stats.nextRaceDate}</div>
+                  <div className="text-[clamp(1.75rem,4vw,3rem)] lg:text-[clamp(2rem,calc(5.56vw-24.7px),2.6rem)] leading-[1.05] mt-1 wrap-break-word">{t.stats.nextRaceName}</div>
                 </div>
               </a>
 
@@ -333,7 +333,7 @@ export default function TriathleteHomepage(): ReactElement {
                   src="/assets/finish-line.JPG"
                   alt="Finish line"
                   fill
-                  sizes="420px"
+                  sizes="(min-width: 1024px) 400px, 100vw"
                   className="absolute inset-0 h-full w-full object-cover object-[center_10%] scale-120"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-red-900/60 via-red-900/20 to-transparent">
